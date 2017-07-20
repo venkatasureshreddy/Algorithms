@@ -20,25 +20,26 @@ public class QuickSort {
 		public static int partition(int arr[], int low, int high)
 		{
 			int pivot = arr[high]; // Taking Higher element as pivot
-			int i = (low-1); // index of smaller element
+			int i = (low); // index of smaller element
 			for (int j=low; j<high; j++)
 			{
 				if (arr[j] <= pivot)
 				{
-					i++;
+					
 					int temp = arr[i];
 					arr[i] = arr[j];
 					arr[j] = temp;
+					i++;
 					
 				}
 			}
 
 			//Swaping Pivot with Pindex
-			int temp = arr[i+1];
-			arr[i+1] = arr[high];
+			int temp = arr[i];
+			arr[i] = arr[high];
 			arr[high] = temp;
 
-			return i+1;
+			return i;
 		}
 		
 		public static void sort(int arr[], int low, int high)
